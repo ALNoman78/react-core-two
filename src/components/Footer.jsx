@@ -1,4 +1,5 @@
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Footer = () => {
     const handleScroll = (e, targetId) => {
@@ -20,11 +21,17 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="bg-gray-800 text-gray-300">
+        <motion.footer
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.0, ease: "easeOut" }}
+            className="bg-gray-900"
+        >
             <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
                 {/* Column 1: Brand */}
                 <div className="md:col-span-1">
-                    <h3 className="text-2xl font-bold text-white mb-2">3M</h3>
+                    <h3 className="text-2xl font-bold text-white mb-2">Maisa Monoara Moule</h3>
                     <p className="text-gray-400 pr-4">Digital Marketing Expert focused on delivering results-driven strategies.</p>
                 </div>
 
@@ -46,9 +53,27 @@ const Footer = () => {
                 <div>
                     <h4 className="font-semibold text-white mb-4">Connect</h4>
                     <div className="flex space-x-4">
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-2xl"><FaTwitter /></a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-2xl"><FaLinkedin /></a>
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors text-2xl"><FaGithub /></a>
+                        <motion.a
+                            href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+                            className="text-2xl text-gray-400 hover:text-white"
+                            whileHover={{ y: -3, scale: 1.1 }}
+                        >
+                            <FaTwitter />
+                        </motion.a>
+                        <motion.a
+                            href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                            className="text-2xl text-gray-400 hover:text-white"
+                            whileHover={{ y: -3, scale: 1.1 }}
+                        >
+                            <FaLinkedin />
+                        </motion.a>
+                        <motion.a
+                            href="https://github.com" target="_blank" rel="noopener noreferrer"
+                            className="text-2xl text-gray-400 hover:text-white"
+                            whileHover={{ y: -3, scale: 1.1 }}
+                        >
+                            <FaGithub />
+                        </motion.a>
                     </div>
                 </div>
 
@@ -64,12 +89,12 @@ const Footer = () => {
             </div>
 
             {/* Bottom Bar */}
-            <div className="bg-gray-900 py-4">
+            <div className="bg-black/20 py-4">
                 <div className="max-w-7xl mx-auto px-6 text-center text-gray-500">
                     <p>&copy; {new Date().getFullYear()} 3M. All Rights Reserved.</p>
                 </div>
             </div>
-        </footer>
+        </motion.footer>
     )
 }
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion"; // optional, for animation
 
 const certificates = [
@@ -30,8 +29,9 @@ const Certificates = () => {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: index * 0.2 }}
-                        className="bg-white border border-gray-200 shadow-lg rounded-xl overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer relative"
+                        transition={{ duration: 0.5, delay: index * 0.2, ease: "easeOut" }}
+                        whileHover={{ y: -8, scale: 1.03, boxShadow: "0px 15px 30px rgba(0, 0, 0, 0.2)" }}
+                        className="bg-white border border-gray-200 shadow-lg rounded-xl overflow-hidden cursor-pointer relative"
                     >
                         {/* Badge */}
                         <span className="absolute top-3 left-3 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full z-10">

@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import Navbar from './Navbar'
 import Hero from './Hero'
 import Footer from './Footer'

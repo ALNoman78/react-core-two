@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const projects = [
     {
         title: "SocialBuzz – Social Media Campaign",
@@ -42,18 +44,36 @@ const projects = [
 
 export default function ProjectSection() {
     return (
-        <section className="py-16 bg-gray-50" id="projects">
-            <div className="max-w-6xl mx-auto px-6 text-center">
-                <h2 className="text-4xl font-bold mb-4">Featured Campaigns</h2>
-                <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
+        <section className="py-16" id="projects">
+            <div className="max-w-6xl mx-auto px-6">
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="text-4xl font-bold text-center mb-4"
+                >
+                    Featured Campaigns
+                </motion.h2>
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    className="mb-12 max-w-2xl mx-auto text-center">
                     A showcase of key digital marketing projects, demonstrating expertise in social media, SEO, email marketing, and data-driven campaign strategies.
-                </p>
+                </motion.p>
 
                 <div className="grid md:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
-                        <div
+                        <motion.div
                             key={index}
-                            className="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col h-full transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+                            className="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col h-full"
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            whileHover={{ y: -8, scale: 1.03, boxShadow: "0px 15px 30px rgba(0, 0, 0, 0.2)" }}
                         >
                             <img
                                 src={project.image}
@@ -61,8 +81,8 @@ export default function ProjectSection() {
                                 className="w-full h-40 object-cover"
                             />
                             <div className="p-6 flex flex-col flex-grow">
-                                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                                <p className="text-gray-600 mb-4 text-sm flex-grow">{project.description}</p>
+                                <h3 className="text-xl font-semibold mb-2 text-gray-800">{project.title}</h3>
+                                <p className="text-gray-600 mb-4 text-sm flex-grow ">{project.description}</p>
 
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     {project.tools.map((tool, i) => (
@@ -85,7 +105,7 @@ export default function ProjectSection() {
                                     View Case Study
                                 </button>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import { motion } from "framer-motion";
 import {
     FaBullseye,
     FaChartLine,
@@ -53,17 +53,22 @@ const Services = () => {
             {/* About Section */}
             {/* Services Section */}
             <div>
-                <h2 className="text-3xl font-bold text-center mb-10">My Services</h2>
+                <h2 className="text-3xl font-bold text-center mb-10">My Services</h2> 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
-                        <div
+                        <motion.div
                             key={index}
-                            className="bg-white border md:flex flex-col gap-3 items-center border-gray-200 shadow-md rounded-xl p-6 text-center transform transition duration-500 hover:scale-105 hover:shadow-xl cursor-pointer"
+                            className="bg-white/5 border border-white/10 md:flex flex-col gap-3 items-center shadow-lg rounded-xl p-6 text-center cursor-pointer"
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            whileHover={{ y: -10, scale: 1.02, boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.1)" }}
                         >
                             {service.icon}
-                            <h3 className="text-xl font-semibold mb-2 text-black">{service.title}</h3>
-                            <p className="text-gray-700">{service.description}</p>
-                        </div>
+                            <h3 className="text-xl font-semibold mb-2 text-white">{service.title}</h3>
+                            <p className="text-gray-300">{service.description}</p>
+                        </motion.div>
                     ))}
                 </div>
             </div>

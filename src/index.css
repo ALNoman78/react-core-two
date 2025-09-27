@@ -1,2 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
 @import "tailwindcss";
 @plugin "daisyui";
+
+body {
+    @apply bg-[#1a2942] text-white;
+}
+
+/* Apply consistent styles to all main section headings */
+h2 {
+    @apply text-4xl font-bold text-center mb-12;
+}
