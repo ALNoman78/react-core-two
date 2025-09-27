@@ -1,16 +1,24 @@
 
 
 const Navbar = () => {
+    const handleScroll = (e, targetId) => {
+        e.preventDefault();
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
     const list = <>
-        <li className='text-[1rem]'><a>Home</a></li>
-        <li className='text-[1rem]'><a>About Us</a></li>
-        <li className='text-[1rem]'><a>Projects</a></li>
-        <li className='text-[1rem]'><a>Skill</a></li>
-        <li className='text-[1rem]'><a>Education</a></li>
-        <li className='text-[1rem]'><a>Certificates</a></li>
+        <li className='text-[1rem]'><a href="#hero" onClick={(e) => handleScroll(e, '#hero')}>Home</a></li>
+        <li className='text-[1rem]'><a href="#about" onClick={(e) => handleScroll(e, '#about')}>About Us</a></li>
+        <li className='text-[1rem]'><a href="#services" onClick={(e) => handleScroll(e, '#services')}>Services</a></li>
+        <li className='text-[1rem]'><a href="#projects" onClick={(e) => handleScroll(e, '#projects')}>Projects</a></li>
+        <li className='text-[1rem]'><a href="#skill" onClick={(e) => handleScroll(e, '#skill')}>Skill</a></li>
+        <li className='text-[1rem]'><a href="#certificates" onClick={(e) => handleScroll(e, '#certificates')}>Certificates</a></li>
     </>
     return (
-        <div className="navbar md:w-[1360px] mx-auto bg-white py-5">
+        <div className="navbar md:w-[1360px] mx-auto bg-white py-5 sticky top-0 z-40 shadow-sm">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -30,7 +38,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Contact Me</a>
+                <a href="#contact" onClick={(e) => handleScroll(e, '#contact')} className="btn">Contact Me</a>
             </div>
         </div>
     )

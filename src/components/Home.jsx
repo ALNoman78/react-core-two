@@ -7,6 +7,8 @@ import AboutUs from './AboutUs'
 import Services from './Services'
 import ProjectSection from './Project'
 import Achievements from './Certificate'
+import ContactForm from './Contact'
+import Skills from './Skills'
 
 
 const Home = () => {
@@ -15,9 +17,11 @@ const Home = () => {
             <Navbar></Navbar>
             <Hero></Hero>
             <AboutUs></AboutUs>
+            <Skills></Skills>
             <Services></Services>
             <ProjectSection></ProjectSection>
             <Achievements></Achievements>
+            <ContactForm></ContactForm>
             <Footer></Footer>
         </div>
     )

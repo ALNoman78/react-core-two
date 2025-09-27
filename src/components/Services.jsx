@@ -49,7 +49,7 @@ const services = [
 
 const Services = () => {
     return (
-        <section className="max-w-7xl mx-auto px-6 py-16">
+        <section id="services" className="max-w-7xl mx-auto px-6 py-16">
             {/* About Section */}
             {/* Services Section */}
             <div>

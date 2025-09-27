@@ -21,7 +21,7 @@ const certificates = [
 
 const Certificates = () => {
     return (
-        <section className="max-w-7xl mx-auto px-6 py-16">
+        <section id="certificates" className="max-w-7xl mx-auto px-6 py-16">
             <h2 className="text-3xl font-bold text-center mb-12">Certificates</h2>
             <div className="grid grid-cols-1 justify-center items-center md:grid-cols-2 gap-8">
                 {certificates.map((item, index) => (

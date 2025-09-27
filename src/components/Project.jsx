@@ -1,7 +1,7 @@
 const projects = [
     {
         title: "SocialBuzz – Social Media Campaign",
-        image: "/socialbuzz.png",
+        image: "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description:
             "Managed a multi-platform social media campaign that increased engagement and follower growth using targeted content and analytics-driven strategy.",
         tools: ["Facebook Ads", "Instagram", "Canva", "Buffer"],
@@ -14,7 +14,7 @@ const projects = [
     },
     {
         title: "SEOBoost – Website SEO Optimization",
-        image: "/seoboost.png",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description:
             "Optimized website content, metadata, and backlinks to improve organic search rankings, driving more traffic and leads for the client.",
         tools: ["Google Analytics", "Ahrefs", "Yoast SEO", "Screaming Frog"],
@@ -27,7 +27,7 @@ const projects = [
     },
     {
         title: "EmailPro – Email Marketing Campaign",
-        image: "/emailpro.png",
+        image: "https://images.unsplash.com/photo-1557200134-90327ee9f6d5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         description:
             "Designed and executed email marketing campaigns that improved customer retention and conversion rates through personalized content and automation.",
         tools: ["Mailchimp", "HubSpot", "Canva", "Zapier"],
