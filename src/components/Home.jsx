@@ -6,6 +6,7 @@ import Footer from './Footer'
 import AboutUs from './AboutUs'
 import Services from './Services'
 import ProjectSection from './Project'
+import Achievements from './Certificate'
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
             <AboutUs></AboutUs>
             <Services></Services>
             <ProjectSection></ProjectSection>
+            <Achievements></Achievements>
             <Footer></Footer>
         </div>
     )
