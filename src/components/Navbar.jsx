@@ -49,11 +49,11 @@ const Navbar = () => {
 
     return (
         <div
-            className={`navbar fixed top-0 left-1/2 -translate-x-1/2 md:w-[1360px] z-50 transition-all duration-300 ${
+            className={`navbar fixed top-0 left-1/2 -translate-x-1/2 md:w-[1360px] w-full z-50 transition-all duration-300 ${
                 scrolled ? "top-2 py-2 bg-white/10 backdrop-blur-lg rounded-full shadow-lg" : "py-5 bg-transparent"
             }`}
         >
-            <div className="navbar-start">
+            <div className="navbar-start justify-between md:justify-normal">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
@@ -71,7 +71,7 @@ const Navbar = () => {
                     onClick={(e) => handleScroll(e, '#hero')}
                     className="text-2xl font-bold font-heading"
                 >
-                    <img className="w-[80px] rounded-full" src="https://i.ibb.co.com/pjmr5nM4/Chat-GPT-Image-Sep-27-2025-11-21-04-PM.png" alt="" />
+                    <img className="md:w-[80px] w-[50px] rounded-full" src="https://i.ibb.co.com/pjmr5nM4/Chat-GPT-Image-Sep-27-2025-11-21-04-PM.png" alt="" />
                 </a>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -96,7 +96,7 @@ const Navbar = () => {
                 <a
                     href="#contact"
                     onClick={(e) => handleScroll(e, '#contact')}
-                    className="btn rounded-full border-none bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg hover:shadow-blue-500/50 transition-shadow"
+                    className="btn hide md:flex rounded-full border-none bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg hover:shadow-blue-500/50 transition-shadow"
                 >
                     Contact Me
                 </a>

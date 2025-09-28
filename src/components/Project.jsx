@@ -1,114 +1,151 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 
 const projects = [
     {
-        title: "SocialBuzz – Social Media Campaign",
-        image: "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        id: 1,
+        title: "SEO Growth Campaign",
         description:
-            "Managed a multi-platform social media campaign that increased engagement and follower growth using targeted content and analytics-driven strategy.",
-        tools: ["Facebook Ads", "Instagram", "Canva", "Buffer"],
-        points: [
-            "Boosted engagement by 45% in 3 months",
-            "Created content calendars for consistent posting",
-            "Analyzed performance metrics to optimize campaigns",
-            "Collaborated with influencers for wider reach",
-        ],
+            "Increased organic traffic by 180% in 6 months using advanced SEO, keyword targeting, and content optimization.",
+        details:
+            "This project focused on technical SEO fixes, keyword mapping, backlink strategies, and content marketing. Result: higher Google rankings and sustainable growth in organic traffic.",
+        image:
+            "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=800&q=80",
+        link: "#",
     },
     {
-        title: "SEOBoost – Website SEO Optimization",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        id: 2,
+        title: "Social Media Strategy",
         description:
-            "Optimized website content, metadata, and backlinks to improve organic search rankings, driving more traffic and leads for the client.",
-        tools: ["Google Analytics", "Ahrefs", "Yoast SEO", "Screaming Frog"],
-        points: [
-            "Increased organic traffic by 60%",
-            "Improved keyword rankings for 20+ target terms",
-            "Conducted technical SEO audits and fixes",
-            "Enhanced user experience for better engagement",
-        ],
+            "Boosted engagement by 65% with creative ad campaigns across Facebook, Instagram, and LinkedIn.",
+        details:
+            "Created a consistent content calendar, leveraged video ads, and ran A/B tested campaigns. Increased brand visibility and generated quality leads with targeted ads.",
+        image:
+            "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80",
+        link: "#",
     },
     {
-        title: "EmailPro – Email Marketing Campaign",
-        image: "https://images.unsplash.com/photo-1557200134-90327ee9f6d5?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        id: 3,
+        title: "Email Marketing Automation",
         description:
-            "Designed and executed email marketing campaigns that improved customer retention and conversion rates through personalized content and automation.",
-        tools: ["Mailchimp", "HubSpot", "Canva", "Zapier"],
-        points: [
-            "Achieved 35% open rate and 12% CTR",
-            "Segmented audience for personalized messaging",
-            "Automated welcome and follow-up sequences",
-            "Analyzed campaign performance to optimize strategy",
-        ],
+            "Implemented email funnels that raised conversions by 30% for an e-commerce brand.",
+        details:
+            "We built segmented campaigns with personalized product recommendations. Open rates hit 45% and click-through rates reached 18%.",
+        image:
+            "https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?auto=format&fit=crop&w=800&q=80",
+        link: "#",
+    },
+    {
+        id: 4,
+        title: "PPC Advertising Campaign",
+        description:
+            "Reduced ad spend by 25% while doubling conversions using optimized Google Ads campaigns.",
+        details:
+            "Restructured campaigns, improved ad copy, and applied audience targeting. ROI significantly improved while lowering CPC.",
+        image:
+            "https://images.unsplash.com/photo-1559028006-44d5a2b3e3f4?auto=format&fit=crop&w=800&q=80",
+        link: "#",
     },
 ];
 
 export default function ProjectSection() {
-    return (
-        <section className="py-16" id="projects">
-            <div className="max-w-6xl mx-auto px-6">
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="text-4xl font-bold text-center mb-4"
-                >
-                    Featured Campaigns
-                </motion.h2>
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                    className="mb-12 max-w-2xl mx-auto text-center">
-                    A showcase of key digital marketing projects, demonstrating expertise in social media, SEO, email marketing, and data-driven campaign strategies.
-                </motion.p>
+    const [selectedProject, setSelectedProject] = useState(null);
 
-                <div className="grid md:grid-cols-3 gap-8">
-                    {projects.map((project, index) => (
+    return (
+        <section id="projects" className="bg-black text-white py-12 sm:py-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+                {/* Header */}
+                <div className="flex justify-between items-center mb-8">
+                    <h2 className="text-2xl sm:text-3xl font-semibold">Projects</h2>
+                    <a
+                        href="#"
+                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                    >
+                        View all →
+                    </a>
+                </div>
+
+                {/* Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    {projects.map((project) => (
                         <motion.div
-                            key={index}
-                            className="bg-white shadow-md rounded-2xl overflow-hidden flex flex-col h-full"
-                            initial={{ opacity: 0, y: 50 }}
+                            key={project.id}
+                            className="rounded-xl overflow-hidden bg-gray-900 border border-gray-800 cursor-pointer"
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            whileHover={{ y: -8, scale: 1.03, boxShadow: "0px 15px 30px rgba(0, 0, 0, 0.2)" }}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
+                            whileHover={{
+                                y: -8,
+                                scale: 1.03,
+                                boxShadow: "0px 15px 30px rgba(0, 0, 0, 0.2)",
+                            }}
+                            onClick={() => setSelectedProject(project)}
                         >
-                            <img
-                                src={project.image}
-                                alt={project.title}
-                                className="w-full h-40 object-cover"
-                            />
-                            <div className="p-6 flex flex-col flex-grow">
-                                <h3 className="text-xl font-semibold mb-2 text-gray-800">{project.title}</h3>
-                                <p className="text-gray-600 mb-4 text-sm flex-grow ">{project.description}</p>
-
-                                <div className="flex flex-wrap gap-2 mb-4">
-                                    {project.tools.map((tool, i) => (
-                                        <span
-                                            key={i}
-                                            className="px-2 py-1 bg-gray-200 text-gray-700 rounded-full text-sm hover:bg-blue-100 transition-colors"
-                                        >
-                                            {tool}
-                                        </span>
-                                    ))}
-                                </div>
-
-                                <ul className="list-disc pl-5 text-gray-700 text-sm text-left space-y-1 mb-4">
-                                    {project.points.map((point, i) => (
-                                        <li key={i}>{point}</li>
-                                    ))}
-                                </ul>
-
-                                <button className="mt-auto bg-blue-600 text-white py-2 px-4 rounded-xl hover:bg-blue-700 transition-colors">
-                                    View Case Study
-                                </button>
+                            <div className="aspect-video">
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div className="p-4">
+                                <h3 className="text-lg font-medium mb-2 ">
+                                    <span className="flex items-center gap-2">
+                                        {project.title} <FaExternalLinkAlt />
+                                    </span>
+                                </h3>
+                                <p className="text-gray-400 text-sm">{project.description}</p>
                             </div>
                         </motion.div>
                     ))}
                 </div>
             </div>
+
+            {/* Modal */}
+            {selectedProject && (
+                <div
+                    className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 px-4 sm:px-6"
+                    onClick={() => setSelectedProject(null)}
+                >
+                    <motion.div
+                        className="bg-gray-900 rounded-xl max-w-2xl w-full p-6 relative border border-gray-700"
+                        initial={{ scale: 0.9, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Close button */}
+                        <button
+                            onClick={() => setSelectedProject(null)}
+                            className="absolute top-3 right-3 text-gray-400 hover:text-white"
+                        >
+                            <FaTimes size={20} />
+                        </button>
+
+                        {/* Image */}
+                        <div className="aspect-video mb-4">
+                            <img
+                                src={selectedProject.image}
+                                alt={selectedProject.title}
+                                className="w-full h-full object-cover rounded-lg"
+                            />
+                        </div>
+
+                        {/* Content */}
+                        <h3 className="text-xl font-semibold mb-2">
+                            {selectedProject.title}
+                        </h3>
+                        <p className="text-gray-400 mb-4">{selectedProject.details}</p>
+                        <a
+                            href={selectedProject.link}
+                            className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 transition rounded-lg"
+                        >
+                            Visit Project
+                        </a>
+                    </motion.div>
+                </div>
+            )}
         </section>
     );
 }

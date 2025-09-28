@@ -21,7 +21,7 @@ const letterVariant = {
 const Hero = () => {
     return (
         <div id='hero' className="hero min-h-screen">
-            <div className="hero-content md:w-[1280px] mx-auto flex-col justify-between lg:flex-row-reverse">
+            <div className="hero-content md:w-[1280px] mx-auto flex-col-reverse md:flex-col lg:flex-row-reverse justify-between">
                 <motion.div className='w-full lg:w-1/2 flex justify-center'
                     initial={{ opacity: 0, x: 40 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -47,7 +47,7 @@ const Hero = () => {
                 >
                     <motion.h1
                         variants={containerVariant}
-                        className="text-5xl font-bold"
+                        className="md:text-5xl text-2xl font-bold"
                     >
                         {"Maisa Monoara Moule".split("").map((char, index) => (
                             <motion.span key={index} variants={letterVariant} style={{ display: 'inline-block' }}>
@@ -55,8 +55,8 @@ const Hero = () => {
                             </motion.span>
                         ))}
                     </motion.h1>
-                    <motion.p variants={letterVariant} className="py-6 md:w-[600px]">
-                        A passionate and results-driven Digital Marketing Expert who helps businesses grow their online presence with smart, data-driven strategies. With expertise in SEO, social media management, content marketing, and paid advertising, impactful campaigns are crafted to reach the right audience and deliver measurable results.
+                    <motion.p variants={letterVariant} className="py-6 md:w-[600px] w-full">
+                        A Digital Marketing Expert is a professional who helps businesses grow their online presence, attract the right audience, and convert them into loyal customers. They specialize in areas such as SEO (Search Engine Optimization), social media marketing, content strategy, paid advertising (Google Ads, Facebook Ads), and email marketing.
                     </motion.p>
                     <motion.div variants={letterVariant} className='flex items-center gap-4 mt-4'>
                         <motion.a
