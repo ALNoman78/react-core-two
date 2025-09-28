@@ -110,7 +110,7 @@ export default function ProjectSection() {
                     onClick={() => setSelectedProject(null)}
                 >
                     <motion.div
-                        className="bg-gray-900 rounded-xl max-w-2xl w-full p-6 relative border border-gray-700"
+                        className="bg-gray-900 rounded-xl max-w-2xl w-full p-8 relative border border-gray-700"
                         initial={{ scale: 0.9, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         onClick={(e) => e.stopPropagation()}
@@ -118,9 +118,9 @@ export default function ProjectSection() {
                         {/* Close button */}
                         <button
                             onClick={() => setSelectedProject(null)}
-                            className="absolute top-3 right-3 text-gray-400 hover:text-white"
+                            className="absolute top-4 right-4 text-gray-400 hover:text-white bg-gray-800/50 hover:bg-gray-700/70 rounded-full p-2 transition-colors"
                         >
-                            <FaTimes size={20} />
+                            <FaTimes size={24} />
                         </button>
 
                         {/* Image */}

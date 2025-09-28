@@ -20,7 +20,7 @@ const letterVariant = {
 
 const Hero = () => {
     return (
-        <div id='hero' className="hero min-h-screen">
+        <div id='hero' className="hero min-h-screen pt-40 md:pt-0">
             <div className="hero-content md:w-[1280px] mx-auto flex-col-reverse md:flex-col lg:flex-row-reverse justify-between">
                 <motion.div className='w-full lg:w-1/2 flex justify-center'
                     initial={{ opacity: 0, x: 40 }}
@@ -47,7 +47,7 @@ const Hero = () => {
                 >
                     <motion.h1
                         variants={containerVariant}
-                        className="md:text-5xl text-2xl font-bold"
+                        className="md:text-5xl text-3xl font-bold"
                     >
                         {"Maisa Monoara Moule".split("").map((char, index) => (
                             <motion.span key={index} variants={letterVariant} style={{ display: 'inline-block' }}>
