@@ -53,7 +53,7 @@ export default function ProjectSection() {
     const [selectedProject, setSelectedProject] = useState(null);
 
     return (
-        <section id="projects" className="bg-black text-white py-12 sm:py-16">
+        <section id="projects" className="text-white py-12 sm:py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
                 {/* Header */}
                 <div className="flex justify-between items-center mb-8">
