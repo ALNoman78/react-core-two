@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaCheckCircle, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaCheckCircle, FaEnvelope, FaMapMarkerAlt,  FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
 const ContactForm = () => {
